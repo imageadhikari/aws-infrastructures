@@ -1,8 +1,8 @@
 module "vpc" {
   source                    = "./modules/vpc"
-  region                    = var.region
+  region                    = 
   vpc-cidr                  = 
-  public-subnet-1-cidr      =
+  public-subnet-1-cidr      = 
   public-subnet-2-cidr      = 
   private-subnet-1-cidr     =
   private-subnet-2-cidr     =  
