@@ -32,7 +32,7 @@ module "ec2" {
     vpc_id                    = module.vpc.vpc_id
 #     name                      = 
 #     tags                      = 
-    subnet_id                 = module.vpc.public_subnet_1_id
+    subnet_id                 = module.vpc.public_subnet_id[0]
 #     depends_on = [
 #       modules.vpc.
 #     ]
