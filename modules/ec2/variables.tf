@@ -1,6 +1,6 @@
 variable "ami_id" {
   type = string
-  default = "ami-0557a15b87f6559cf"
+  default = "ami-014d05e6b24240371"
   description = "AMI ID to deploy EC2 instance."
 }
 
@@ -29,6 +29,7 @@ variable "tags" {
 
 variable "subnet_id" {
     default = "subnet-0c1bd82bab903fd34"
+    # default = "subnet-09a1331e66bf6f46a"
     type = string
     description = "Subnet ID"  
 }
