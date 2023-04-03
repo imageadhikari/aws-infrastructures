@@ -26,10 +26,6 @@ resource "aws_security_group" "alb_sg" {
 #   }
 # }
 
-# resource "aws_lb_target_group" "ia-tg" {
-  
-# }
-
 
 # create application load balancer
 resource "aws_lb" "application_load_balancer" {

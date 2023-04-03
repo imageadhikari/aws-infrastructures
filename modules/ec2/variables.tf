@@ -12,7 +12,7 @@ variable "instance_type" {
 
 variable "vpc_id" {
   type = string
-  # default = "vpc-06c8545f702a3d5f7"
+  default = "vpc-06c8545f702a3d5f7"
   description = "VPC where we will create EC2 instance"
 }
 
