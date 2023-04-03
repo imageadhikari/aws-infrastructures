@@ -70,11 +70,17 @@ resource "aws_lb_listener" "alb_listener" {
 
   default_action {
     type = "fixed-response"
-
+    target_group_arn = aws_lb_target_group.alb_target_group.arn
     fixed_response {
       content_type = "text/plain"
       message_body = "Fixed response content"
       status_code  = "200"
     }
   }
+}
+
+resource "aws_lb_target_group_attachment" "aws-tg-att" {
+  target_group_arn = aws_lb_target_group.alb_target_group.arn
+  target_id = var.ec2_id
+  port = 80 
 }
