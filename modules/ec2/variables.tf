@@ -1,6 +1,6 @@
 variable "ami_id" {
   type = string
-  default = "ami-014d05e6b24240371"
+  default = "ami-007855ac798b5175e"
   description = "AMI ID to deploy EC2 instance."
 }
 
@@ -12,7 +12,7 @@ variable "instance_type" {
 
 variable "vpc_id" {
   type = string
-  default = "vpc-06c8545f702a3d5f7"
+  # default = "vpc-06c8545f702a3d5f7"
   description = "VPC where we will create EC2 instance"
 }
 

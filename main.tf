@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-west-1"
+  region = "us-east-1"
   profile = "default"
 }
 
@@ -50,3 +50,11 @@ module "ec2" {
 # resource "aws_instance" "ec2_using_vpc" {
 #   vpc_id = module.vpc.vpc_id
 # }
+
+module "alb" {
+  source = "./modules/alb"
+  public_subnet_id_1 = module.vpc.public_subnet_id[0]
+  public_subnet_id_2 =  module.vpc.public_subnet_id[1]
+  vpc_id = module.vpc.vpc_id
+  security_group_id = module.ec2.security_group_id  
+}

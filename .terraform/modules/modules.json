@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"ec2","Source":"./modules/ec2","Dir":"modules/ec2"},{"Key":"rds","Source":"./modules/rds","Dir":"modules/rds"},{"Key":"vpc","Source":"./modules/vpc","Dir":"modules/vpc"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"alb","Source":"./modules/alb","Dir":"modules/alb"},{"Key":"ec2","Source":"./modules/ec2","Dir":"modules/ec2"},{"Key":"rds","Source":"./modules/rds","Dir":"modules/rds"},{"Key":"vpc","Source":"./modules/vpc","Dir":"modules/vpc"}]}
