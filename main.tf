@@ -13,8 +13,8 @@ provider "aws" {
   profile = "default"
 }
 
-# module "vpc" {
-  # source                    = "./modules/vpc"
+module "vpc" {
+  source                    = "./modules/vpc"
   # region                    = 
   # vpc-cidr                  = 
   # public-subnet-1-cidr      = 
@@ -23,33 +23,28 @@ provider "aws" {
   # private-subnet-2-cidr     =  
   # private-subnet-3-cidr     =
   # private-subnet-4-cidr     =  
-# }
+}
 
-# module "ec2" {
-    # source                    = "./modules/ec2"
-#     ami_id                    = 
-#     instance_type             =
-    # vpc_id                    = module.vpc.vpc_id
-#     name                      = 
-#     tags                      = 
-    # subnet_id                 = module.vpc.public_subnet_id[0]
-#     depends_on = [
-#       modules.vpc.
-#     ]
-# }
+module "ec2" {
+    source                    = "./modules/ec2"
+    # ami_id                    = 
+    # instance_type             =
+    vpc_id                    = module.vpc.vpc_id
+    # name                      = 
+    # tags                      = 
+    subnet_id                 = module.vpc.public_subnet_id[0]
+}
 
-# module "rds" {
-#   source                        = "./modules/rds"
+module "rds" {
+  source                        = "./modules/rds"
   # instance_class                = 
   # storage                       =
   # engine                        = 
   # engine-version                =  
-# }
-
-
-# resource "aws_instance" "ec2_using_vpc" {
-#   vpc_id = module.vpc.vpc_id
-# }
+  vpc_id                        = module.vpc.vpc_id 
+  security_group                = module.ec2.security_group_id 
+  given_subnet_id               = module.vpc.private_subnet_id
+}
 
 # module "alb" {
 #   source = "./modules/alb"
@@ -66,6 +61,6 @@ provider "aws" {
   # security_groups = 
 # }
 
-module "s3" {
-  source = "./modules/s3"  
-}
+# module "s3" {
+#   source = "./modules/s3"  
+# }
